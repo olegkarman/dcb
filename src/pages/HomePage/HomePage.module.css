@@ -1,0 +1,49 @@
+.pageWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10%;
+}
+
+.childWrapper {
+    width: 50%;
+}
+
+.imageWrapper {
+    text-align: center;
+}
+
+.childStyles {
+    max-width: 320px;
+    margin: auto;
+}
+
+.imageStyles {
+    width: 300px;
+    height: auto;
+}
+
+.buttonsWrapper {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonStyles {
+    text-decoration: none;
+    vertical-align: middle;
+    font-weight: 500;
+    line-height: 1.75;
+    font-family: Roboto;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.primaryButton {
+    backgroundColor: #326aff;
+}
+
+.secondaryButton {
+    backgroundColor: #151317;
+}

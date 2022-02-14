@@ -1,21 +1,32 @@
 import { Link as RouterLink } from "react-router-dom";
-
-const linkStyles = {
-    padding: "0 16px",
-    color: "#282728",
-    textDecoration: "none",
-    fontWeight: "bold",
-    transition: "0.3s",
-}
+import styles from "./Buttons.module.css";
+import classNames from "classnames";
 
 export const Link = ({
     text,
     link,
+    type = "link",
+    buttonType = "primary",
+    upperCased = true,
 }) => {
-    return (
-        <RouterLink
-            to={ link }
-            style={ linkStyles }
-        >{ text }</RouterLink>
-    )
+    if (type === "link") {
+        return (
+            <RouterLink
+                to={link}
+                className={styles.linkStyles}
+            >{text}</RouterLink>
+        );
+    } else {
+        return (
+            <RouterLink
+                to={link}
+                className={classNames({
+                    [styles.buttonStyles]: true,
+                    [styles.upperCased]: upperCased,
+                    [styles.primaryButton]: buttonType === "primary",
+                    [styles.secondaryButton]: buttonType === "secondary"
+                })}
+            >{text}</RouterLink>
+        );
+    }
 }

@@ -1,0 +1,46 @@
+.linkStyles {
+    padding: 0 16px;
+    color: #282728;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.buttonStyles {
+    text-decoration: none;
+    vertical-align: middle;
+    font-weight: 500;
+    line-height: 1.75;
+    font-family: Roboto;
+    padding: 6px 16px;
+    border-radius: 4px;
+    color: #fff;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.onlyIconButton {
+    text-align: center;
+}
+
+.buttonWithIcon {
+
+}
+
+.upperCased {
+    text-transform: uppercase;
+}
+
+.linkStyles:hover,
+.buttonStyles:hover {
+    opacity: .75;
+}
+
+.primaryButton {
+    background-color: #326aff;
+}
+
+.secondaryButton {
+    background-color: #151317;
+}

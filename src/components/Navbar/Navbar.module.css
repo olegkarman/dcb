@@ -1,0 +1,21 @@
+.navigationStyles {
+    width: auto;
+    height: 60px;
+    background-color: #f2f1f2;
+}
+
+.linksOuterWrapper {
+    width: 100%;
+    line-height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.linksWrapper {
+    padding: 0 16px;
+}
+
+.burgerWrapper {
+    display: flex;
+    justify-content: end;
+}
