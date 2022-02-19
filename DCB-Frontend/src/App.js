@@ -4,7 +4,8 @@ import {
     Route
 } from "react-router-dom";
 import { HomePage } from "./pages/HomePage/HomePage";
-import { Navbar } from "./components/Navbar/Navbar";
+import { Navbar } from "./components/Navigation/Navbar/Navbar";
+import { Footer } from "./components/Footer/Footer";
 
 export const App = () => (
     <>
@@ -16,6 +17,7 @@ export const App = () => (
                 {/*<Route path="login" element={<Login />} />*/}
                 {/*<Route path="register" element={<Register />} />*/}
             </Routes>
+            <Footer />
         </BrowserRouter>
     </>
 )

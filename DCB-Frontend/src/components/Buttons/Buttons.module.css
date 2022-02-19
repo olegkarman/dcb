@@ -6,12 +6,16 @@
     transition: 0.3s;
 }
 
+.linkStyles img {
+    display: inline-block;
+    margin-right: 8px;
+}
+
 .buttonStyles {
     text-decoration: none;
     vertical-align: middle;
     font-weight: 500;
     line-height: 1.75;
-    font-family: Roboto;
     padding: 6px 16px;
     border-radius: 4px;
     color: var(--white);

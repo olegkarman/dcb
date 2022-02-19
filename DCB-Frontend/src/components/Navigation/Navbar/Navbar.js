@@ -1,14 +1,31 @@
 import styles from './Navbar.module.css';
-import { Link } from "../Buttons/Link";
-import BurgerIcon from "../../assets/burger.svg";
+import BurgerIcon from "../../../assets/burger.svg";
 import { useState } from "react";
-import { Button } from "../Buttons/Button";
+import { Button } from "../../Buttons/Button";
 import { Sidebar } from "../Sidebar/Sidebar";
-import { Icon } from "../Icon/Icon";
-import DCBIcon from "../../assets/dcb.svg";
+import { Icon } from "../../Icon/Icon";
+import DCBIcon from "../../../assets/dcb.svg";
+import { renderLoginLinks, renderMainLinks } from "../linksRenderer";
 
 export const Navbar = () => {
     const [isSideBarOpen, setSideBarOpen] = useState(false);
+    const [showLinks, setShowLinks] = useState(window.innerWidth > 755);
+
+    const handleScreenResize = () => {
+        if (window.innerWidth > 755) {
+            setShowLinks(true);
+        } else {
+            setShowLinks(false);
+        }
+    }
+
+    useState(() => {
+        window.addEventListener('resize', handleScreenResize);
+
+        return () => {
+            window.removeEventListener('resize', handleScreenResize);
+        }
+    }, []);
 
     const changeSidebarState = () => setSideBarOpen(!isSideBarOpen);
 
@@ -17,7 +34,7 @@ export const Navbar = () => {
             <div
                 className={styles.navigationStyles}
             >
-                {window.innerWidth > 755 ? (
+                {showLinks ? (
                     <div
                         className={styles.linksOuterWrapper}
                     >
@@ -29,19 +46,11 @@ export const Navbar = () => {
                         </div>
 
                         <div className={styles.linksWrapper}>
-                            <Link link="/" text="Home" />
-                            <Link link="/advertisement" text="Advertisements" />
-                            <Link link="/about" text="About" />
+                            {renderMainLinks()}
                         </div>
 
                         <div className={styles.linksWrapper}>
-                            <Link link="/login" text="Login" />
-                            <Link
-                                link="/register"
-                                type="button"
-                                text="Sign up"
-                                upperCased={false}
-                            />
+                            {renderLoginLinks()}
                         </div>
                     </div>
                 ) : (

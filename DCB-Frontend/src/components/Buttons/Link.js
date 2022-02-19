@@ -1,6 +1,7 @@
 import { Link as RouterLink } from "react-router-dom";
 import styles from "./Buttons.module.css";
 import classNames from "classnames";
+import { Icon } from "../Icon/Icon";
 
 export const Link = ({
     text,
@@ -8,13 +9,20 @@ export const Link = ({
     type = "link",
     buttonType = "primary",
     upperCased = true,
+    iconUrl,
+    alt = ""
 }) => {
     if (type === "link") {
         return (
             <RouterLink
                 to={link}
                 className={styles.linkStyles}
-            >{text}</RouterLink>
+            >{iconUrl && (
+                <Icon
+                    src={iconUrl}
+                    alt={alt}
+                />
+            )}{text}</RouterLink>
         );
     } else {
         return (
@@ -26,7 +34,12 @@ export const Link = ({
                     [styles.primaryButton]: buttonType === "primary",
                     [styles.secondaryButton]: buttonType === "secondary"
                 })}
-            >{text}</RouterLink>
+            >{iconUrl && (
+                <Icon
+                    src={iconUrl}
+                    alt={alt}
+                />
+            )}{text}</RouterLink>
         );
     }
 }
