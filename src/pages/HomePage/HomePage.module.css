@@ -1,14 +1,13 @@
 .pageWrapper {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 10%;
-}
-
-.childWrapper {
-    width: 50%;
+    padding: 0 16px;
+    flex-direction: column-reverse;
+    text-align: center;
 }
 
 .imageWrapper {
+    margin-top: 64px;
     text-align: center;
 }
 
@@ -18,32 +17,50 @@
 }
 
 .imageStyles {
-    width: 300px;
-    height: auto;
+    width: 100%;
+    border-radius: 16px;
 }
 
-.buttonsWrapper {
+.buttonsWrapper,
+.additionalInfo {
     margin: auto;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
-.buttonStyles {
-    text-decoration: none;
-    vertical-align: middle;
-    font-weight: 500;
-    line-height: 1.75;
-    font-family: Roboto;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border-radius: 4px;
-    color: #fff;
+.additionalText {
+    color: var(--primary-grey);
+    margin: 8px 0 0;
 }
 
-.primaryButton {
-    backgroundColor: #326aff;
+.additionalIcon {
+    margin-top: 8px;
 }
 
-.secondaryButton {
-    backgroundColor: #151317;
+@media screen and (min-width: 768px) {
+    .pageWrapper {
+        text-align: initial;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .childWrapper {
+        width: 45%;
+    }
+
+    .buttonsWrapper,
+    .additionalInfo {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .imageStyles {
+        max-width: 320px;
+        height: 90%;
+        margin: 0;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }

@@ -1,6 +1,6 @@
 .linkStyles {
     padding: 0 16px;
-    color: #282728;
+    color: var(--buttons-black);
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
@@ -14,7 +14,7 @@
     font-family: Roboto;
     padding: 6px 16px;
     border-radius: 4px;
-    color: #fff;
+    color: var(--white);
     transition: 0.3s;
     border: none;
     cursor: pointer;
@@ -38,9 +38,9 @@
 }
 
 .primaryButton {
-    background-color: #326aff;
+    background-color: var(--primary-blue);
 }
 
 .secondaryButton {
-    background-color: #151317;
+    background-color: var(--primary-black);
 }

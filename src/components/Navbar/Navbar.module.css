@@ -1,7 +1,7 @@
 .navigationStyles {
     width: auto;
     height: 60px;
-    background-color: #f2f1f2;
+    background-color: var(--primary-white);
 }
 
 .linksOuterWrapper {
