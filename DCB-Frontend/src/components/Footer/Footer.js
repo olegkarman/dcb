@@ -30,7 +30,7 @@ export const Footer = () => (
 
             <Spacer size={16} />
 
-            <p>
+            <p className={styles.rights}>
                 ©2020 sEvil Apps | All rights reserved | Privacy
             </p>
         </div>
