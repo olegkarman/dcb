@@ -1,0 +1,9 @@
+.pageWrapper {
+    width: auto;
+    margin: 16px 8px;
+    max-width: 768px;
+}
+
+.pageHeader {
+    text-align: center;
+}

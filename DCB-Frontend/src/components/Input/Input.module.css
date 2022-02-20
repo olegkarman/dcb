@@ -1,0 +1,338 @@
+.inputContainer {
+    --primary-color-local: var(--primary-black);
+    --white-color-local: var(--white);
+    --text-color-local: #565656;
+    --placeholder-color-local: grey;
+    --grey-color-local: #9a9a9a;
+    --border-color-local: #b4b4b4;
+    --border-error-color-local: red;
+    --background-disabled-color-local: lightgrey;
+    --border-radius-local: 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.inputContainer label,
+.inputContainer input,
+.inputContainer textarea,
+.inputContainer select {
+    font-family: OpenSans-Regular;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.2px;
+    color: var(--text-color-local);
+    box-sizing: border-box;
+}
+
+.labelRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.labelRow label,
+.label,
+:global(.labelRowLabel) {
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.labelHint {
+    margin-left: 4px;
+    line-height: 0;
+    align-self: center;
+}
+
+.requiredLabel {
+    margin-left: auto;
+    color: var(--grey-color-local);
+}
+
+.inputRow {
+    --input-border: 1px;
+    --icon-width: 24px;
+    --icon-width-16: 16px;
+    --icon-shift1: 12px;
+    --icon-shift2: 8px;
+    --pinned-text-width: 32px;
+    --pinned-text-shift1: 3px;
+    --pinned-text-shift2: 5px;
+    --step-button-width: 32px;
+    --step-button-shift1: 4px;
+    --step-button-shift2: 5px;
+
+    width: 100%;
+    position: relative;
+}
+
+.inputRow.inputRowIconLeft input {
+    padding-left:
+        calc(
+            var(--icon-shift1) + var(--icon-shift2) + var(--icon-width)
+        );
+}
+
+.inputRow.inputRowIconLeft16 input {
+    padding-left:
+        calc(
+            var(--icon-shift1) + var(--icon-shift2) + var(--icon-width-16)
+        );
+}
+
+.inputRow.inputRowIconRight input {
+    padding-right:
+        calc(
+            var(--icon-shift1) + var(--icon-shift2) + var(--icon-width)
+        );
+}
+
+.inputRow.inputRowIconRight16 input {
+    padding-right:
+        calc(
+            var(--icon-shift1) + var(--icon-shift2) + var(--icon-width-16)
+        );
+}
+
+.inputRow.inputRowPinnedTextLeft input {
+    padding-left:
+        calc(
+            var(--pinned-text-shift1) + var(--pinned-text-shift2) +
+            var(--pinned-text-width)
+        );
+}
+
+.inputRow.inputRowPinnedTextRight input {
+    padding-right:
+        calc(
+            var(--pinned-text-shift1) + var(--pinned-text-shift2) +
+            var(--pinned-text-width)
+        );
+}
+
+.inputRow.inputRowStepButtons input {
+    text-align: center;
+    padding-left:
+        calc(
+            var(--step-button-shift1) + var(--step-button-shift2) +
+            var(--step-button-width)
+        );
+    padding-right:
+        calc(
+            var(--step-button-shift1) + var(--step-button-shift2) +
+            var(--step-button-width)
+        );
+}
+
+.inputRow input {
+    width: 100%;
+    border: var(--input-border) solid var(--border-color-local);
+    border-color: var(--secondary-grey);
+    border-radius: var(--border-radius-local);
+    padding: 8px 11px;
+}
+
+.inputRow input:active {
+    outline: none;
+}
+
+.inputRow input:hover {
+    border-color: var(--border-color-local);
+}
+
+.inputRow input:focus {
+    /* make 2px border by using original 1px border + 1px box shadow */
+    border: var(--input-border) solid var(--primary-color-local) !important;
+    border-color: var(--primary-color-local) !important;
+    outline: none;
+    box-shadow: 0 0 0 1px var(--primary-color-local) !important;
+}
+
+.inputRow input:disabled {
+    background-color: var(--background-disabled-color-local);
+}
+
+.inputRow input::placeholder {
+    color: var(--placeholder-color-local);
+}
+
+.inputRow input.inputValidationError,
+.inputRow input.inputValidationError:not(:active):not(:focus):hover {
+    border-color: var(--border-error-color-local) !important;
+}
+
+/* Disable arrows for number input */
+
+/* Chrome, Safari, Edge, Opera */
+.inputRow input[type="number"].disableNumberArrows::-webkit-outer-spin-button,
+.inputRow input[type="number"].disableNumberArrows::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.inputRow input[type="number"].disableNumberArrows {
+    -moz-appearance: textfield;
+}
+
+/* textarea */
+.inputRow textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--border-color-local);
+    border-radius: var(--border-radius-local);
+    padding: 8px 12px;
+}
+
+.inputRow textarea:active {
+    outline: none;
+}
+
+.inputRow textarea:focus {
+    /* make 2px border by using original 1px border + 1px box shadow */
+    border: 1px solid var(--primary-color-local) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 1px var(--primary-color-local);
+}
+
+.inputRow textarea:disabled {
+    background-color: var(--background-disabled-color-local);
+}
+
+.inputRow textarea::placeholder {
+    color: var(--placeholder-color-local);
+}
+
+.inputRow textarea.inputValidationError {
+    border-color: var(--border-error-color-local);
+}
+
+.description {
+    color: var(--grey-color-local);
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.validationError {
+    font-size: 12px;
+    line-height: 20px;
+    color: red;
+}
+
+.inputIcon {
+    width: var(--icon-width);
+    position: absolute;
+    z-index: 1;
+    line-height: 0;
+    height: auto;
+    top: var(--input-border);
+    bottom: var(--input-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.inputIcon:focus,
+.inputIcon:active,
+.inputIcon:hover {
+    border: none;
+    outline: none;
+}
+
+.inputIcon16 {
+    width: var(--icon-width-16);
+}
+
+.inputIconClickable {
+    cursor: pointer;
+}
+
+.inputIconLeft {
+    left: var(--icon-shift1);
+}
+
+.inputIconRight {
+    right: var(--icon-shift1);
+}
+
+.inputPinnedText {
+    width: var(--pinned-text-width);
+    position: absolute;
+    line-height: 0;
+    height: auto;
+    top: var(--pinned-text-shift1);
+    bottom: var(--pinned-text-shift1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    color: var(--secondary-grey);
+    background-color: lightgrey;
+    font-size: 14px;
+}
+
+.inputPinnedText:focus,
+.inputPinnedText:active,
+.inputPinnedText:hover {
+    border: none;
+    outline: none;
+}
+
+.inputPinnedTextDisabled {
+    color: var(--secondary-grey);
+}
+
+.inputPinnedTextLeft {
+    left: var(--pinned-text-shift1);
+}
+
+.inputPinnedTextRight {
+    right: var(--pinned-text-shift1);
+}
+
+.numberInputStepButton {
+    width: var(--step-button-width);
+    position: absolute;
+    line-height: 0;
+    height: auto;
+    top: var(--step-button-shift1);
+    bottom: var(--step-button-shift1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    color: grey;
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.numberInputStepButtonDisabled {
+    color: grey;
+    cursor: default;
+}
+
+.numberInputStepButtonLeft {
+    left: var(--step-button-shift1);
+}
+
+.numberInputStepButtonRight {
+    right: var(--step-button-shift1);
+}
