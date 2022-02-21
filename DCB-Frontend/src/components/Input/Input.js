@@ -2,7 +2,6 @@ import styles from "./Input.module.css";
 import classNames from "classnames";
 import Popup from "reactjs-popup";
 import { isEmpty } from "../../utils/helpers";
-import { getUniqueId } from "../../utils/getUniqueId";
 
 export const Input = ({
     type = "text",
@@ -11,7 +10,8 @@ export const Input = ({
     validationError = undefined,
     required = false,
     hint = undefined,
-    id = getUniqueId("inp_"),
+    // todo fix id
+    id = Math.floor(Math.random() * 1000000000),
     hideLabel = false,
     label = "",
     pinnedText = undefined,

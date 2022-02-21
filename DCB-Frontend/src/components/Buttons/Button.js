@@ -6,8 +6,9 @@ export const Button = ({
     icon,
     iconDesc,
     onlyIcon = false,
-    onClick,
-    type = "primary"
+    onClick = () => {},
+    type = "primary",
+    buttonType = "button"
 }) => {
     return onlyIcon ? (
         <button
@@ -16,6 +17,7 @@ export const Button = ({
                 [styles.buttonStyles]: type,
                 [styles.onlyIconButton]: true
             })}
+            type={buttonType}
         >
             <img src={icon} alt={iconDesc} />
         </button>
@@ -28,6 +30,7 @@ export const Button = ({
                 [styles.primaryButton]: type === "primary",
                 [styles.secondaryButton]: type === "secondary"
             })}
+            type={buttonType}
         >{text}</button>
     )
 };

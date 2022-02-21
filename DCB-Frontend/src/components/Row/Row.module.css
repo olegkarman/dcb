@@ -1,0 +1,12 @@
+.rowWrapper {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    .rowWrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

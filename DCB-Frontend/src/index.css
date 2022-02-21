@@ -19,4 +19,6 @@ code {
   --primary-white: #f2f1f2;
   --white: #fff;
   --grey-hover: #d1d5db;
+  --text-color: #565656;
+  --placeholder-color: #808080;
 }

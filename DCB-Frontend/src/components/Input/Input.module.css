@@ -1,12 +1,8 @@
 .inputContainer {
-    --primary-color-local: var(--primary-black);
-    --white-color-local: var(--white);
-    --text-color-local: #565656;
-    --placeholder-color-local: grey;
     --grey-color-local: #9a9a9a;
     --border-color-local: #b4b4b4;
-    --border-error-color-local: red;
-    --background-disabled-color-local: lightgrey;
+    --border-error-color-local: #fd2727;
+    --background-disabled-color-local: #d2d2d2;
     --border-radius-local: 4px;
 
     display: flex;
@@ -20,13 +16,12 @@
 .inputContainer input,
 .inputContainer textarea,
 .inputContainer select {
-    font-family: OpenSans-Regular;
     font-style: normal;
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
     letter-spacing: 0.2px;
-    color: var(--text-color-local);
+    color: var(--text-color);
     box-sizing: border-box;
 }
 
@@ -41,7 +36,7 @@
 .labelRow label,
 .label,
 :global(.labelRowLabel) {
-    letter-spacing: 0.5px;
+    letter-spacing: .5px;
     line-height: 24px;
     font-weight: 600;
 }
@@ -59,10 +54,6 @@
 
 .inputRow {
     --input-border: 1px;
-    --icon-width: 24px;
-    --icon-width-16: 16px;
-    --icon-shift1: 12px;
-    --icon-shift2: 8px;
     --pinned-text-width: 32px;
     --pinned-text-shift1: 3px;
     --pinned-text-shift2: 5px;
@@ -72,34 +63,6 @@
 
     width: 100%;
     position: relative;
-}
-
-.inputRow.inputRowIconLeft input {
-    padding-left:
-        calc(
-            var(--icon-shift1) + var(--icon-shift2) + var(--icon-width)
-        );
-}
-
-.inputRow.inputRowIconLeft16 input {
-    padding-left:
-        calc(
-            var(--icon-shift1) + var(--icon-shift2) + var(--icon-width-16)
-        );
-}
-
-.inputRow.inputRowIconRight input {
-    padding-right:
-        calc(
-            var(--icon-shift1) + var(--icon-shift2) + var(--icon-width)
-        );
-}
-
-.inputRow.inputRowIconRight16 input {
-    padding-right:
-        calc(
-            var(--icon-shift1) + var(--icon-shift2) + var(--icon-width-16)
-        );
 }
 
 .inputRow.inputRowPinnedTextLeft input {
@@ -149,11 +112,10 @@
 }
 
 .inputRow input:focus {
-    /* make 2px border by using original 1px border + 1px box shadow */
-    border: var(--input-border) solid var(--primary-color-local) !important;
-    border-color: var(--primary-color-local) !important;
+    border: var(--input-border) solid var(--primary-black) !important;
+    border-color: var(--primary-black) !important;
     outline: none;
-    box-shadow: 0 0 0 1px var(--primary-color-local) !important;
+    box-shadow: 0 0 0 1px var(--primary-black) !important;
 }
 
 .inputRow input:disabled {
@@ -161,7 +123,7 @@
 }
 
 .inputRow input::placeholder {
-    color: var(--placeholder-color-local);
+    color: var(--placeholder-color);
 }
 
 .inputRow input.inputValidationError,
@@ -169,21 +131,16 @@
     border-color: var(--border-error-color-local) !important;
 }
 
-/* Disable arrows for number input */
-
-/* Chrome, Safari, Edge, Opera */
 .inputRow input[type="number"].disableNumberArrows::-webkit-outer-spin-button,
 .inputRow input[type="number"].disableNumberArrows::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-/* Firefox */
 .inputRow input[type="number"].disableNumberArrows {
     -moz-appearance: textfield;
 }
 
-/* textarea */
 .inputRow textarea {
     display: block;
     width: 100%;
@@ -197,10 +154,9 @@
 }
 
 .inputRow textarea:focus {
-    /* make 2px border by using original 1px border + 1px box shadow */
-    border: 1px solid var(--primary-color-local) !important;
+    border: 1px solid var(--primary-black) !important;
     outline: none !important;
-    box-shadow: 0 0 0 1px var(--primary-color-local);
+    box-shadow: 0 0 0 1px var(--primary-black);
 }
 
 .inputRow textarea:disabled {
@@ -208,11 +164,7 @@
 }
 
 .inputRow textarea::placeholder {
-    color: var(--placeholder-color-local);
-}
-
-.inputRow textarea.inputValidationError {
-    border-color: var(--border-error-color-local);
+    color: var(--placeholder-color);
 }
 
 .description {
@@ -224,47 +176,7 @@
 .validationError {
     font-size: 12px;
     line-height: 20px;
-    color: red;
-}
-
-.inputIcon {
-    width: var(--icon-width);
-    position: absolute;
-    z-index: 1;
-    line-height: 0;
-    height: auto;
-    top: var(--input-border);
-    bottom: var(--input-border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    background: transparent;
-    border: none;
-    outline: none;
-}
-
-.inputIcon:focus,
-.inputIcon:active,
-.inputIcon:hover {
-    border: none;
-    outline: none;
-}
-
-.inputIcon16 {
-    width: var(--icon-width-16);
-}
-
-.inputIconClickable {
-    cursor: pointer;
-}
-
-.inputIconLeft {
-    left: var(--icon-shift1);
-}
-
-.inputIconRight {
-    right: var(--icon-shift1);
+    color: var(--border-error-color-local);
 }
 
 .inputPinnedText {
