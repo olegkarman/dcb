@@ -5,7 +5,7 @@ import { Spacer } from "../../components/Spacer/Spacer";
 import { Button } from "../../components/Buttons/Button";
 import { Row } from "../../components/Row/Row";
 import { Datetime } from "../../components/Datetime/Datetime";
-import {emailPattern} from "../../utils/regEx";
+import {emailPattern, phoneNumberPattern} from "../../utils/regEx";
 
 export const Register = () => {
     const {  handleSubmit, formState: { errors }, control } = useForm();
@@ -32,6 +32,7 @@ export const Register = () => {
                                 validationError={
                                     errors.FirstName && "First name is required"
                                 }
+                                required
                             />
                         )}
                     />
@@ -51,6 +52,7 @@ export const Register = () => {
                                 validationError={
                                     errors.LastName && "Last name is required"
                                 }
+                                required
                             />
                         )}
                     />
@@ -62,7 +64,6 @@ export const Register = () => {
                     <Controller
                         name="DOB"
                         control={control}
-                        rules={{ required: true }}
                         render={({ field }) => (
                             <Datetime
                                 onChange={field.onChange}
@@ -79,18 +80,23 @@ export const Register = () => {
                     <Spacer size={8} />
 
                     <Controller
-                        name="Gender"
+                        name="PhoneNumber"
                         control={control}
-                        rules={{ required: true }}
+                        rules={{
+                            required: true,
+                            validate: (value) =>
+                                phoneNumberPattern.test(value)
+                        }}
                         render={({ field }) => (
                             <Input
-                                label="Gender"
-                                placeholder="Enter your gender"
+                                label="Phone number"
+                                placeholder="Enter your phone number"
                                 value={field.value || ""}
                                 onChange={field.onChange}
                                 validationError={
-                                    errors.Gender && "Gender is required"
+                                    errors.PhoneNumber && "Wrong phone number format"
                                 }
+                                required
                             />
                         )}
                     />
@@ -116,6 +122,7 @@ export const Register = () => {
                                 validationError={
                                     errors.Email && "Wrong email format"
                                 }
+                                required
                             />
                         )}
                     />
@@ -136,6 +143,7 @@ export const Register = () => {
                                     errors.Password && "Password is required"
                                 }
                                 type="password"
+                                required
                             />
                         )}
                     />
