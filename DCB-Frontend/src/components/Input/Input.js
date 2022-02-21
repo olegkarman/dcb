@@ -2,6 +2,10 @@ import styles from "./Input.module.css";
 import classNames from "classnames";
 import Popup from "reactjs-popup";
 import { isEmpty } from "../../utils/helpers";
+import { useState } from "react";
+import { Icon } from "../Icon/Icon";
+import ShowIcon from "../../assets/eye.svg";
+import HideIcon from "../../assets/no-eye.svg";
 
 export const Input = ({
     type = "text",
@@ -30,6 +34,11 @@ export const Input = ({
     enableNumberArrows,
 }) => {
     const internalValue = value === null ? undefined : value;
+    const [buttonType, setButtonType] = useState(type);
+
+    const changeInputType = () => {
+        setButtonType(buttonType === type ? "text" : "password");
+    }
 
     return (
         <div className={styles.inputContainer}>
@@ -83,7 +92,7 @@ export const Input = ({
                 <input
                     ref={inputRef}
                     id={id}
-                    type={type}
+                    type={buttonType}
                     placeholder={placeholder}
                     required={required}
                     disabled={disabled}
@@ -92,6 +101,7 @@ export const Input = ({
                     onChange={(e) => onChange(e, e.target.value)}
                     onKeyPress={(e) => onKeyPress(e)}
                     className={classNames({
+                        [styles.inputWithIcon]: type === "password",
                         [styles.inputValidationError]: invalid || !!validationError,
                         [styles.disableNumberArrows]: !enableNumberArrows,
                     })}
@@ -99,6 +109,15 @@ export const Input = ({
                     max={max}
                     step={step}
                 />
+
+                {type === "password" && (
+                    <span className={styles.passwordIcon}>
+                        <Icon
+                            src={buttonType === "password" ? ShowIcon : HideIcon}
+                            onClick={changeInputType}
+                        />
+                    </span>
+                )}
             </div>
 
             {description && (

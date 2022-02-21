@@ -5,6 +5,7 @@ import { Spacer } from "../../components/Spacer/Spacer";
 import { Button } from "../../components/Buttons/Button";
 import { Row } from "../../components/Row/Row";
 import { Datetime } from "../../components/Datetime/Datetime";
+import {emailPattern} from "../../utils/regEx";
 
 export const Register = () => {
     const {  handleSubmit, formState: { errors }, control } = useForm();
@@ -101,7 +102,11 @@ export const Register = () => {
                     <Controller
                         name="Email"
                         control={control}
-                        rules={{ required: true }}
+                        rules={{
+                            required: true,
+                            validate: (value) =>
+                                emailPattern.test(value),
+                        }}
                         render={({ field }) => (
                             <Input
                                 label="Email"
@@ -109,7 +114,7 @@ export const Register = () => {
                                 value={field.value || ""}
                                 onChange={field.onChange}
                                 validationError={
-                                    errors.Email && "Email is required"
+                                    errors.Email && "Wrong email format"
                                 }
                             />
                         )}

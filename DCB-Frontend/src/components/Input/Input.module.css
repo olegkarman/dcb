@@ -248,3 +248,14 @@
 .numberInputStepButtonRight {
     right: var(--step-button-shift1);
 }
+
+.passwordIcon {
+    display: flex;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+input.inputWithIcon {
+    padding-left: 40px;
+}

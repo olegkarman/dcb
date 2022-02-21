@@ -2,10 +2,12 @@ export const Icon = ({
     src,
     alt = "",
     size = 24,
-    className = ""
+    className = "",
+    onClick = () => {},
 }) => {
     return (
         <img
+            onClick={onClick}
             src={src}
             alt={alt}
             className={className}
