@@ -1,11 +1,11 @@
 import { useForm, Controller } from "react-hook-form";
 import { Input } from "../../components/Input/Input";
-import styles from "./Register.module.css";
+import layoutStyles from "../../components/Layout/Layout.module.css";
 import { Spacer } from "../../components/Spacer/Spacer";
 import { Button } from "../../components/Buttons/Button";
-import { Row } from "../../components/Row/Row";
+import { Row } from "../../components/Layout/Row/Row";
 import { Datetime } from "../../components/Datetime/Datetime";
-import {emailPattern, phoneNumberPattern} from "../../utils/regEx";
+import { emailPattern, phoneNumberPattern } from "../../utils/regEx";
 
 export const Register = () => {
     const {  handleSubmit, formState: { errors }, control } = useForm();
@@ -13,8 +13,8 @@ export const Register = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div className={styles.pageWrapper}>
-                <h1 className={styles.pageHeader}>Registration</h1>
+            <div className={layoutStyles.pageWrapper}>
+                <h1 className={layoutStyles.pageHeader}>Registration</h1>
 
                 <Spacer size={32} />
 
@@ -154,7 +154,6 @@ export const Register = () => {
                 <Button
                     buttonType="submit"
                     text="Register"
-
                 />
             </div>
         </form>

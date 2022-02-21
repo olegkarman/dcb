@@ -1,0 +1,6 @@
+.fieldsWrapper {
+    flex-direction: column;
+    width: auto;
+    max-width: 384px;
+    margin: auto;
+}
