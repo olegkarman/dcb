@@ -38,6 +38,12 @@
     margin-top: 8px;
 }
 
+@media screen and (min-width: 480px) {
+    .imageWrapper {
+        margin-bottom: 64px;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .pageWrapper {
         text-align: initial;
@@ -49,14 +55,22 @@
         width: 45%;
     }
 
+    .childStyles {
+        max-width: 480px;
+    }
+
     .buttonsWrapper,
     .additionalInfo {
         flex-direction: row;
         justify-content: space-between;
     }
 
+    .buttonsWrapper {
+        justify-content: flex-start;
+    }
+
     .imageStyles {
-        max-width: 320px;
+        max-width: 480px;
         height: 90%;
         margin: 0;
         position: relative;

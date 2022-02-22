@@ -1,10 +1,10 @@
 import styles from './Navbar.module.css';
-import BurgerIcon from "../../../assets/burger.svg";
+import BurgerIcon from "../../../assets/icons/burger.svg";
 import { useState } from "react";
 import { Button } from "../../Buttons/Button";
 import { Sidebar } from "../Sidebar/Sidebar";
 import { Icon } from "../../Icon/Icon";
-import DCBIcon from "../../../assets/dcb.svg";
+import DCBIcon from "../../../assets/icons/dcb.svg";
 import { renderLoginLinks, renderMainLinks } from "../linksRenderer";
 
 export const Navbar = () => {

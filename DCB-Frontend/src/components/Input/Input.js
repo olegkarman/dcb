@@ -4,8 +4,8 @@ import Popup from "reactjs-popup";
 import { isEmpty } from "../../utils/helpers";
 import { useState } from "react";
 import { Icon } from "../Icon/Icon";
-import ShowIcon from "../../assets/eye.svg";
-import HideIcon from "../../assets/no-eye.svg";
+import ShowIcon from "../../assets/icons/eye.svg";
+import HideIcon from "../../assets/icons/no-eye.svg";
 
 export const Input = ({
     type = "text",

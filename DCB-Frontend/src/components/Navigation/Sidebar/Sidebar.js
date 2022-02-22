@@ -1,7 +1,7 @@
 import styles from "./Sidebar.module.css";
 import classNames from "classnames";
 import { renderLoginLinks, renderMainLinks } from "../linksRenderer";
-import DCBIcon from "../../../assets/dcb.svg";
+import DCBIcon from "../../../assets/icons/dcb.svg";
 import { Icon } from "../../Icon/Icon";
 import { Divider } from "../../Divider/Divider";
 

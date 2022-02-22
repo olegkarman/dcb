@@ -1,6 +1,6 @@
 import AdsImg from "../../assets/advertisement.png";
-import PercentageImg from "../../assets/percentage.svg";
-import ShieldImg from "../../assets/shield.svg";
+import PercentageImg from "../../assets/icons/percentage.svg";
+import ShieldImg from "../../assets/icons/shield.svg";
 import { Spacer } from "../../components/Spacer/Spacer";
 import styles from "./HomePage.module.css";
 import classnames from "classnames";
@@ -31,7 +31,7 @@ export const HomePage = () => {
                     [styles.childStyles]: true
                 })}>
                     <Link
-                        link="/register"
+                        link="/advertisements"
                         type="button"
                         text="Get started"
                     />

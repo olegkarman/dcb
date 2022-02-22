@@ -1,8 +1,8 @@
 import { Link } from "../Buttons/Link";
-import HomeIcon from "../../assets/home.svg";
-import SearchIcon from "../../assets/search.svg";
-import InfoIcon from "../../assets/info.svg";
-import LoginIcon from "../../assets/person.svg";
+import HomeIcon from "../../assets/icons/home.svg";
+import SearchIcon from "../../assets/icons/search.svg";
+import InfoIcon from "../../assets/icons/info.svg";
+import LoginIcon from "../../assets/icons/person.svg";
 
 export const renderMainLinks = (withIcons = false) => {
     return (
@@ -13,7 +13,7 @@ export const renderMainLinks = (withIcons = false) => {
                 iconUrl={withIcons ? HomeIcon : ""}
             />
             <Link
-                link="/advertisement"
+                link="/advertisements"
                 text="Advertisements"
                 iconUrl={withIcons ? SearchIcon : ""}
             />
